@@ -1,24 +1,23 @@
-import { gql } from 'apollo-server-express';
+import { gql } from "apollo-server-express";
 
 export const typeDefs = gql`
-    type Cat {
-        id : ID
-        name : String
-    }
+  type User {
+    id: ID
+    name: String
+  }
 
-    type Company {
-        id : ID
-        name : String
-    }
+  type Company {
+    id: ID
+    name: String
+  }
 
-    type Query {
-        hello : String!,
-        cat(name:String) : [Cat!],
-        company : [Company!]
-    }
-    
-    type Mutation {
-        createCat(name: String!): Cat!
-    }    
-`
-    ;
+  type Query {
+    hello: String!
+    user(name: String): [User!]
+    company: [Company!]
+  }
+
+  type Mutation {
+    createUser(name: String!): User!
+  }
+`;
